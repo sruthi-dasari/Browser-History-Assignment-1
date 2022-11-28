@@ -1,0 +1,11 @@
+.app-container {
+  display: flex;
+}
+
+.navbar {
+  background-color: #3367d6;
+  height: 40px;
+}
+
+.app-logo {
+}
