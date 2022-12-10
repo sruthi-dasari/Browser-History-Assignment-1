@@ -3,8 +3,7 @@ import {Component} from 'react'
 
 class BrowserItem extends Component {
   onDelete = () => {
-    const {deleteItem} = this.props
-    const {itemContainer} = this.props
+    const {deleteItem, itemContainer} = this.props
     const {id} = itemContainer
     deleteItem(id)
   }
@@ -14,17 +13,23 @@ class BrowserItem extends Component {
     const {timeAccessed, logoUrl, title, domainUrl} = itemContainer
 
     return (
-      <li>
+      <li className="list-item">
         <p className="time">{timeAccessed}</p>
         <img className="logo" src={logoUrl} alt="domain logo" />
-        <h1 className="title">{title}</h1>
+        <p className="title">{title}</p>
         <p className="domain">{domainUrl}</p>
-        <img
-          className="delete-icon"
+        <button
+          testid="delete"
           onClick={this.onDelete}
-          src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
-          alt="delete"
-        />
+          type="button"
+          className="delete-btn"
+        >
+          <img
+            className="delete-icon"
+            src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
+            alt="delete"
+          />
+        </button>
       </li>
     )
   }
